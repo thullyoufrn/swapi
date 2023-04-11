@@ -1,9 +1,10 @@
-function App() {
+import { Router } from "./Router";
+import { BrowserRouter } from "react-router-dom";
+
+export function App() {
   return (
-    <div className="w-screen h-screen bg-red-300">
-
-    </div>
-  )
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
+  );
 }
-
-export default App

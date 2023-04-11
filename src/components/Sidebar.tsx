@@ -4,6 +4,11 @@ import { Binoculars, User } from "phosphor-react";
 import { NavLink } from "react-router-dom";
 
 export function Sidebar() {
+  const activeClassName =
+    "border-l-figma-gray-100 text-figma-gray-100 font-bold";
+
+  const notActiveClassName = "border-l-figma-gray-400 text-figma-gray-400";
+
   return (
     <aside className="flex-col justify-center h-full p-10 w-60 bg-figma-gray-700 rounded-xl bg-gradient-to-r from-figma-green-300/40 to-figma-purple-200/40">
       <div className="flex justify-center gap-2 mb-16 text-xl font-bold text-figma-purple-100">
@@ -11,23 +16,31 @@ export function Sidebar() {
         <span>Swapi</span>
       </div>
 
-      <nav className="flex flex-col items-center justify-center text-figma-gray-400">
+      <nav className="flex flex-col items-start text-figma-gray-400">
         <NavLink
           to="/"
           title="People"
-          className="flex justify-center gap-3 mb-4 border-x-4 border-x-figma-green-gradient padding-auto"
+          className={({ isActive }) =>
+            isActive ? activeClassName : notActiveClassName
+          }
         >
-          <User size={24} />
-          <span>People</span>
+          <p className="flex self-start gap-3 py-1 pl-5 border-l-4 rounded-sm mb-7">
+            <User size={24} />
+            <span>People</span>
+          </p>
         </NavLink>
 
         <NavLink
           to="/starships"
           title="Starships"
-          className="flex justify-center gap-4"
+          className={({ isActive }) =>
+            isActive ? activeClassName : notActiveClassName
+          }
         >
-          <Binoculars size={24} />
-          <span>Starships</span>
+          <p className="flex self-start gap-3 py-1 pl-5 mb-4 border-l-4 rounded-sm">
+            <Binoculars size={24} />
+            <span>Starships</span>
+          </p>
         </NavLink>
       </nav>
     </aside>

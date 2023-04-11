@@ -24,7 +24,7 @@ export function Sidebar() {
         <NavLink
           to="/starships"
           title="Starships"
-          className="flex justify-center gap-3"
+          className="flex justify-center gap-4"
         >
           <Binoculars size={24} />
           <span>Starships</span>

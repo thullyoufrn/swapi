@@ -1,6 +1,6 @@
 import { ListItem } from "./ListItem";
 
-interface DataStructure {
+export interface DataStructure {
   name: string;
   height: string;
   mass: string;
@@ -83,8 +83,8 @@ export function PeopleList() {
       {data.map((person) => (
         <ListItem
           key={person.name}
-          itemName={person.name}
-          itemSubname={person.homeworld}
+          itemTitle={person.name}
+          itemSubtitle={person.homeworld}
           to={`/${person.name}`}
         />
       ))}

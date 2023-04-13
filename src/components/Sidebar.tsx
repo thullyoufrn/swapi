@@ -1,13 +1,10 @@
 import logo from "../assets/Logo.svg";
-
+import { useLocation } from "react-router-dom";
 import { Binoculars, User } from "phosphor-react";
 import { NavLink } from "react-router-dom";
 
 export function Sidebar() {
-  const activeClassName =
-    "border-l-figma-gray-100 text-figma-gray-100 font-bold";
-
-  const notActiveClassName = "border-l-figma-gray-400 text-figma-gray-400";
+  const location = useLocation();
 
   return (
     <aside className="flex-col justify-center min-h-full p-10 w-60 bg-figma-gray-700 rounded-xl bg-gradient-to-r from-figma-green-300/40 to-figma-purple-200/40">
@@ -17,27 +14,27 @@ export function Sidebar() {
       </div>
 
       <nav className="flex flex-col items-start text-figma-gray-400 gap-7">
-        <NavLink
-          to="/"
-          title="People"
-          className={({ isActive }) =>
-            isActive ? activeClassName : notActiveClassName
-          }
-        >
-          <p className="flex self-start gap-3 py-1 pl-5 border-l-4 rounded-sm hover:text-figma-gray-300">
+        <NavLink to="/" title="People">
+          <p
+            className={`${
+              location.pathname === "/"
+                ? "flex self-start gap-3 py-1 pl-5 transition-all duration-300 hover:text-figma-gray-300 border-l-4 border-figma-gray-100 font-bold text-figma-gray-100"
+                : "flex self-start gap-3 py-1 pl-5 transition-all duration-300 hover:text-figma-gray-300 border-l-4 border-figma-gray-100/0"
+            }`}
+          >
             <User size={24} />
             <span>People</span>
           </p>
         </NavLink>
 
-        <NavLink
-          to="/starships"
-          title="Starships"
-          className={({ isActive }) =>
-            isActive ? activeClassName : notActiveClassName
-          }
-        >
-          <p className="flex self-start gap-3 py-1 pl-5 border-l-4 rounded-sm hover:text-figma-gray-300">
+        <NavLink to="/starships" title="Starships">
+          <p
+            className={`${
+              location.pathname === "/starships"
+                ? "flex self-start gap-3 py-1 pl-5 transition-all duration-300 hover:text-figma-gray-300 border-l-4 border-figma-gray-100 font-bold text-figma-gray-100"
+                : "flex self-start gap-3 py-1 pl-5 transition-all duration-300 hover:text-figma-gray-300 border-l-4 border-figma-gray-100/0"
+            }`}
+          >
             <Binoculars size={24} />
             <span>Starships</span>
           </p>

@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 interface ListItemProps {
   itemName: string;
   itemSubname: string;
-  to?: string;
+  to: string;
 }
 
-export function ListItem({ itemName, itemSubname, to = "/" }: ListItemProps) {
+export function ListItem({ itemName, itemSubname, to }: ListItemProps) {
   return (
     <NavLink
       to={to}

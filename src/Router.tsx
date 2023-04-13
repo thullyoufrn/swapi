@@ -46,6 +46,35 @@ export function Router() {
 
         <Route path="/starships" element={<Starships />}>
           <Route path="/starships" element={<StarshipsList />} />
+
+          {/* {data.map((starship) => {
+            return (
+              <Route
+                key={starship.name}
+                path={`/${starship.name}`}
+                element={
+                  <PeopleDetails
+                    name={starship.name}
+                    height={starship.height}
+                    mass={starship.mass}
+                    hair_color={starship.hair_color}
+                    skin_color={starship.skin_color}
+                    eye_color={starship.eye_color}
+                    birth_year={starship.birth_year}
+                    gender={starship.gender}
+                    homeworld={starship.homeworld}
+                    films={starship.films}
+                    species={starship.species}
+                    vehicles={starship.vehicles}
+                    starships={starship.starships}
+                    created={starship.created}
+                    edited={starship.edited}
+                    url={starship.url}
+                  />
+                }
+              />
+            );
+          })} */}
         </Route>
       </Route>
     </Routes>

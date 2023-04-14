@@ -1,7 +1,6 @@
 import { User } from "phosphor-react";
 import { Outlet } from "react-router-dom";
 import { Header } from "../components/Header";
-import { PeopleList } from "../components/PeopleList";
 
 export function People() {
   return (
@@ -9,6 +8,7 @@ export function People() {
       <Header
         title="People"
         icon={<User size={24} weight="bold" className="text-figma-green-100" />}
+        returnButton={true}
       />
 
       <Outlet />

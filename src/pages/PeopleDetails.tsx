@@ -18,8 +18,6 @@ import { Category } from "../components/Category";
 import { DataStructure } from "../components/PeopleList";
 
 export function PeopleDetails(props: DataStructure) {
-  console.log(props.species);
-
   return (
     <main className="flex flex-col flex-grow mt-11">
       <Category

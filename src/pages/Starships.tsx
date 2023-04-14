@@ -15,6 +15,7 @@ export function Starships() {
             className="text-figma-green-100"
           />
         }
+        returnButton={true}
       />
 
       <Outlet />

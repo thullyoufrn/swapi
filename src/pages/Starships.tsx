@@ -1,4 +1,5 @@
 import { Binoculars } from "phosphor-react";
+import { Outlet } from "react-router-dom";
 import { Header } from "../components/Header";
 import { StarshipsList } from "../components/StarshipsList";
 
@@ -16,7 +17,7 @@ export function Starships() {
         }
       />
 
-      <StarshipsList />
+      <Outlet />
     </section>
   );
 }

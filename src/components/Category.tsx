@@ -1,16 +1,16 @@
 import { IconProps } from "phosphor-react";
 
-interface PeopleCategoryProps {
+interface CategoryProps {
   categoryIcon: IconProps;
   categoryTitle: string | null;
   categoryInfo: string | string[] | null;
 }
 
-export function PeopleCategory({
+export function Category({
   categoryIcon,
   categoryTitle,
   categoryInfo,
-}: PeopleCategoryProps) {
+}: CategoryProps) {
   return (
     <div className="flex items-center justify-start mb-8 gap-x-4">
       <>{categoryIcon}</>

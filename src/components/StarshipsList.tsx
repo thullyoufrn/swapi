@@ -81,7 +81,7 @@ export function StarshipsList() {
           key={starship.name}
           itemTitle={starship.name}
           itemSubtitle={starship.model}
-          to={`/${starship.name}`}
+          to={`${starship.name}`}
         />
       ))}
     </main>

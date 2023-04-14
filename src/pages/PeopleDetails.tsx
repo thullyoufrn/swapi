@@ -14,69 +14,69 @@ import {
   User,
 } from "phosphor-react";
 
-import { PeopleCategory } from "../components/PeopleCategory";
-import { data, DataStructure } from "../components/PeopleList";
+import { Category } from "../components/Category";
+import { DataStructure } from "../components/PeopleList";
 
 export function PeopleDetails(props: DataStructure) {
   console.log(props.species);
 
   return (
     <main className="flex flex-col flex-grow mt-11">
-      <PeopleCategory
+      <Category
         categoryIcon={<User size={24} weight="bold" />}
         categoryTitle="Name"
         categoryInfo={props.name}
       />
 
-      <PeopleCategory
+      <Category
         categoryIcon={<Ruler size={24} weight="bold" />}
         categoryTitle="Height"
         categoryInfo={props.height}
       />
 
-      <PeopleCategory
+      <Category
         categoryIcon={<Barbell size={24} weight="bold" />}
         categoryTitle="Mass"
         categoryInfo={props.mass}
       />
 
-      <PeopleCategory
+      <Category
         categoryIcon={<Scissors size={24} weight="bold" />}
         categoryTitle="Hair Color"
         categoryInfo={props.hair_color}
       />
 
-      <PeopleCategory
+      <Category
         categoryIcon={<PersonSimple size={24} weight="bold" />}
         categoryTitle="Skin Color"
         categoryInfo={props.skin_color}
       />
 
-      <PeopleCategory
+      <Category
         categoryIcon={<Eye size={24} weight="bold" />}
         categoryTitle="Eye Color"
         categoryInfo={props.eye_color}
       />
 
-      <PeopleCategory
+      <Category
         categoryIcon={<Baby size={24} weight="bold" />}
         categoryTitle="Birth Year"
         categoryInfo={props.birth_year}
       />
 
-      <PeopleCategory
+      <Category
         categoryIcon={<GenderNeuter size={24} weight="bold" />}
         categoryTitle="Gender"
         categoryInfo={props.gender}
       />
 
-      <PeopleCategory
+      <Category
         categoryIcon={<House size={24} weight="bold" />}
         categoryTitle="Homeworld"
         categoryInfo={props.homeworld}
       />
 
-      <PeopleCategory
+      <Category
         categoryIcon={<FilmSlate size={24} weight="bold" />}
         categoryTitle="Films"
         categoryInfo={props.films.map((item) => {
@@ -84,7 +84,7 @@ export function PeopleDetails(props: DataStructure) {
         })}
       />
 
-      <PeopleCategory
+      <Category
         categoryIcon={<PawPrint size={24} weight="bold" />}
         categoryTitle="Species"
         categoryInfo={props.species.map((item) => {
@@ -92,7 +92,7 @@ export function PeopleDetails(props: DataStructure) {
         })}
       />
 
-      <PeopleCategory
+      <Category
         categoryIcon={<Rocket size={24} weight="bold" />}
         categoryTitle="Vehicles"
         categoryInfo={props.vehicles.map((item) => {
@@ -100,7 +100,7 @@ export function PeopleDetails(props: DataStructure) {
         })}
       />
 
-      <PeopleCategory
+      <Category
         categoryIcon={<Binoculars size={24} weight="bold" />}
         categoryTitle="Starships"
         categoryInfo={props.starships.map((item) => {

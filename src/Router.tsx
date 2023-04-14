@@ -1,11 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import { data, PeopleList } from "./components/PeopleList";
-import { StarshipsList } from "./components/StarshipsList";
+import { starshipsData, StarshipsList } from "./components/StarshipsList";
 import { DefaultLayout } from "./layouts/DefaultLayout";
 import { PeopleDetails } from "./pages/PeopleDetails";
 
 import { People } from "./pages/People";
 import { Starships } from "./pages/Starships";
+import { StarshipsDetails } from "./pages/StarshipsDetails";
 
 export function Router() {
   return (
@@ -18,7 +19,7 @@ export function Router() {
             return (
               <Route
                 key={person.name}
-                path={`/${person.name}`}
+                path={`${person.name}`}
                 element={
                   <PeopleDetails
                     name={person.name}
@@ -47,26 +48,28 @@ export function Router() {
         <Route path="/starships" element={<Starships />}>
           <Route path="/starships" element={<StarshipsList />} />
 
-          {/* {data.map((starship) => {
+          {starshipsData.map((starship) => {
             return (
               <Route
                 key={starship.name}
-                path={`/${starship.name}`}
+                path={`${starship.name}`}
                 element={
-                  <PeopleDetails
+                  <StarshipsDetails
                     name={starship.name}
-                    height={starship.height}
-                    mass={starship.mass}
-                    hair_color={starship.hair_color}
-                    skin_color={starship.skin_color}
-                    eye_color={starship.eye_color}
-                    birth_year={starship.birth_year}
-                    gender={starship.gender}
-                    homeworld={starship.homeworld}
+                    model={starship.model}
+                    manufacturer={starship.manufacturer}
+                    cost_in_credits={starship.cost_in_credits}
+                    length={starship.length}
+                    max_atmosphering_speed={starship.max_atmosphering_speed}
+                    crew={starship.crew}
+                    passengers={starship.passengers}
+                    cargo_capacity={starship.cargo_capacity}
+                    consumables={starship.consumables}
+                    hyperdrive_rating={starship.hyperdrive_rating}
+                    MGLT={starship.MGLT}
+                    starship_class={starship.starship_class}
+                    pilots={starship.pilots}
                     films={starship.films}
-                    species={starship.species}
-                    vehicles={starship.vehicles}
-                    starships={starship.starships}
                     created={starship.created}
                     edited={starship.edited}
                     url={starship.url}
@@ -74,7 +77,7 @@ export function Router() {
                 }
               />
             );
-          })} */}
+          })}
         </Route>
       </Route>
     </Routes>

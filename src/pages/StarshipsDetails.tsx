@@ -11,10 +11,10 @@ import {
   Wrench,
 } from "phosphor-react";
 
+import { StarshipsData } from "../@types/swapi";
 import { Category } from "../components/Category";
-import { StarshipsDataStructure } from "../components/StarshipsList";
 
-export function StarshipsDetails(props: StarshipsDataStructure) {
+export function StarshipsDetails(props: StarshipsData) {
   return (
     <main className="flex flex-col flex-grow mt-11">
       <Category
@@ -59,7 +59,7 @@ export function StarshipsDetails(props: StarshipsDataStructure) {
         categoryInfo={props.passengers}
       />
 
-      <Category
+      {/* <Category
         categoryIcon={<Headset size={24} weight="bold" />}
         categoryTitle="Pilots"
         categoryInfo={props.pilots.map((item) => {
@@ -73,7 +73,7 @@ export function StarshipsDetails(props: StarshipsDataStructure) {
         categoryInfo={props.films.map((item) => {
           return `${item}, `;
         })}
-      />
+      /> */}
 
       <Category
         categoryIcon={<SketchLogo size={24} weight="bold" />}

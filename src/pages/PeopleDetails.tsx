@@ -14,10 +14,10 @@ import {
   User,
 } from "phosphor-react";
 
+import { PeopleData } from "../@types/swapi";
 import { Category } from "../components/Category";
-import { DataStructure } from "../components/PeopleList";
 
-export function PeopleDetails(props: DataStructure) {
+export function PeopleDetails(props: PeopleData) {
   return (
     <main className="flex flex-col flex-grow mt-11">
       <Category
@@ -68,7 +68,7 @@ export function PeopleDetails(props: DataStructure) {
         categoryInfo={props.gender}
       />
 
-      <Category
+      {/* <Category
         categoryIcon={<House size={24} weight="bold" />}
         categoryTitle="Homeworld"
         categoryInfo={props.homeworld}
@@ -104,7 +104,7 @@ export function PeopleDetails(props: DataStructure) {
         categoryInfo={props.starships.map((item) => {
           return `${item}, `;
         })}
-      />
+      /> */}
     </main>
   );
 }

@@ -7,6 +7,11 @@ interface ListItemProps {
 }
 
 export function ListItem({ itemTitle, itemSubtitle, to }: ListItemProps) {
+  const originalString = itemSubtitle;
+  const capitalizedString = `${originalString
+    .charAt(0)
+    .toUpperCase()}${originalString.slice(1)}`;
+
   return (
     <NavLink
       to={to}
@@ -14,7 +19,7 @@ export function ListItem({ itemTitle, itemSubtitle, to }: ListItemProps) {
     >
       <h2 className="text-base font-bold text-figma-gray-100">{itemTitle}</h2>
       <span className="text-sm font-normal text-figma-gray-400">
-        {itemSubtitle}
+        {capitalizedString}
       </span>
     </NavLink>
   );

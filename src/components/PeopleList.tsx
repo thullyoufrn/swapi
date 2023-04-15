@@ -11,7 +11,7 @@ export function PeopleList({ peopleData }: PeopleListProps) {
         <ListItem
           key={person.name}
           itemTitle={person.name}
-          itemSubtitle={person.homeworld}
+          itemSubtitle={person.birth_year}
           to={`/${person.name}`}
         />
       ))}

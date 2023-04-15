@@ -4,9 +4,10 @@ export function Home() {
   return (
     <main className="flex items-center justify-center flex-1 max-h-full gap-16 py-12 pl-24 pr-20">
       <img
-        className=" rounded-3xl"
-        src="https://i.pinimg.com/564x/83/ba/d4/83bad475be8afb4a7065808fe15faf33.jpg"
-        alt=""
+        className="max-h-full rounded-3xl"
+        src="https://i.pinimg.com/564x/07/63/a2/0763a214371187810188dce963dbd678.jpg"
+        // src="https://i.pinimg.com/564x/83/ba/d4/83bad475be8afb4a7065808fe15faf33.jpg"
+        alt="star wars wallpaper"
       />
 
       <div className="flex flex-col items-center justify-center gap-10">

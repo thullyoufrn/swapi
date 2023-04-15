@@ -9,6 +9,7 @@ import { StarshipsDetails } from "./pages/StarshipsDetails";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { PeopleData, StarshipsData } from "./@types/swapi";
+import { Home } from "./pages/Home";
 
 export function Router() {
   const [peopleData, setPeopleData] = useState<PeopleData[]>([]);
@@ -39,8 +40,13 @@ export function Router() {
   return (
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
-        <Route path="/" element={<People />}>
-          <Route path="/" element={<PeopleList peopleData={peopleData} />} />
+        <Route path="/" element={<Home />} />
+
+        <Route path="/people" element={<People />}>
+          <Route
+            path="/people"
+            element={<PeopleList peopleData={peopleData} />}
+          />
 
           {peopleData.map((person) => {
             return (

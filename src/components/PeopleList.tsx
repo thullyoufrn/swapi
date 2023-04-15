@@ -12,7 +12,7 @@ export function PeopleList({ peopleData }: PeopleListProps) {
           key={person.name}
           itemTitle={person.name}
           itemSubtitle={person.birth_year}
-          to={`/${person.name}`}
+          to={`${person.name}`}
         />
       ))}
     </main>

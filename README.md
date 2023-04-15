@@ -4,4 +4,5 @@
 [X] Add home page
 [X] Configure the return button paths
 [] Add responsiveness
-[] Dark and light mode
+[] Add a search bar
+[] Add dark and light mode

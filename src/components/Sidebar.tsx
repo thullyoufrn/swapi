@@ -11,7 +11,7 @@ export function Sidebar() {
       className={
         location.pathname === "/"
           ? "hidden"
-          : "flex-col justify-center max-h-screen minus-2rem p-10 w-60 bg-figma-gray-700 rounded-xl bg-gradient-to-t from-figma-green-300/40 to-figma-purple-200/40"
+          : "flex-col justify-center max-h-screen minus-2rem p-10 w-60 bg-figma-gray-700 rounded-xl bg-gradient-to-t from-figma-green-300/40 to-figma-purple-200/40 max-lg:hidden"
       }
     >
       <div className="flex items-center justify-center gap-3 mb-16 text-xl font-bold text-figma-purple-gradient">

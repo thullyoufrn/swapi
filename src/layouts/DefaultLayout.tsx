@@ -1,3 +1,4 @@
+import { MobileMenu } from "../components/MobileMenu";
 import { Sidebar } from "../components/Sidebar";
 import { Outlet, useLocation } from "react-router-dom";
 
@@ -5,16 +6,21 @@ export function DefaultLayout() {
   const location = useLocation();
 
   return (
-    <div
-      className={
-        location.pathname === "/"
-          ? "flex max-w-screen max-h-screen p-4 bg-figma-gray-800 text-figma-gray-100 overflow-x-hidden"
-          : "flex max-w-screen min-h-screen p-4 bg-figma-gray-800 text-figma-gray-100 overflow-x-hidden"
-      }
-    >
-      <Sidebar />
+    <div className="bg-figma-gray-800 text-figma-gray-100">
+      <div
+        className={
+          `flex flex-col max-w-screen-2xl 
+          ${location.pathname === "/"
+            ? "max"
+            : "min"}-h-screen 
+          my-0 mx-auto p-4 overflow-x-hidden lg:flex-row`
+        }
+      >
+        <MobileMenu />
+        <Sidebar />
 
-      <Outlet />
+        <Outlet />
+      </div>
     </div>
   );
 }

@@ -6,7 +6,7 @@ interface PeopleListProps {
 
 export function PeopleList({ peopleData }: PeopleListProps) {
   return (
-    <main className="grid grid-cols-3 gap-5 mt-11">
+    <main className="grid gap-5 mt-11 sm:grid-cols-2 xl:grid-cols-3">
       {peopleData.map((person) => (
         <ListItem
           key={person.name}

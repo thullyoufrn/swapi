@@ -16,7 +16,7 @@ import { Category } from "../components/Category";
 
 export function StarshipsDetails(props: StarshipsData) {
   return (
-    <main className="flex flex-col flex-grow mt-11">
+    <main className="flex flex-col flex-grow mt-11 gap-8">
       <Category
         categoryIcon={<Binoculars size={24} weight="bold" />}
         categoryTitle="Name"

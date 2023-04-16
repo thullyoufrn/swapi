@@ -17,7 +17,7 @@ export function Category({
     .toUpperCase()}${originalString.slice(1)}`;
 
   return (
-    <div className="flex items-center justify-start mb-8 gap-x-4">
+    <div className="flex items-center justify-start gap-x-4">
       <>{categoryIcon}</>
 
       <div className="flex flex-col">

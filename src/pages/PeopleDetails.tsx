@@ -19,7 +19,7 @@ import { Category } from "../components/Category";
 
 export function PeopleDetails(props: PeopleData) {
   return (
-    <main className="flex flex-col flex-grow mt-11">
+    <main className="flex flex-col flex-grow mt-11 gap-8">
       <Category
         categoryIcon={<User size={24} weight="bold" />}
         categoryTitle="Name"

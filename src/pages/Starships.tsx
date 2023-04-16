@@ -1,11 +1,10 @@
 import { Binoculars } from "phosphor-react";
 import { Outlet } from "react-router-dom";
 import { Header } from "../components/Header";
-import { StarshipsList } from "../components/StarshipsList";
 
 export function Starships() {
   return (
-    <section className="flex flex-col flex-grow pt-12 pl-24 pr-20">
+    <section className="flex flex-col flex-grow py-12 pl-24 pr-20">
       <Header
         title="Starships"
         icon={

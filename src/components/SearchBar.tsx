@@ -1,4 +1,3 @@
-import { MagnifyingGlass } from "phosphor-react"
 import { ChangeEvent } from "react";
 import { useLocation } from "react-router-dom"
 
@@ -20,8 +19,6 @@ export function SearchBar({ handleSearchBarChange, searchBarContent }: SearchBar
         value={searchBarContent}
       >
       </textarea>
-
-      <button><MagnifyingGlass size={20} className="text-figma-gray-500 hover:text-figma-gray-200 transition-all duration-300" /></button>
     </form>
   )
 }

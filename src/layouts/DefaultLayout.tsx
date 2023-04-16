@@ -6,7 +6,7 @@ export function DefaultLayout() {
   const location = useLocation();
 
   return (
-    <div className="bg-figma-gray-800 text-figma-gray-100 text-xs">
+    <div className="bg-figma-gray-800 text-figma-gray-100">
       <div
         className={
           `flex flex-col max-w-screen-2xl 
@@ -16,7 +16,7 @@ export function DefaultLayout() {
           my-0 mx-auto p-4 overflow-x-hidden lg:flex-row`
         }
       >
-        {/* <MobileMenu /> */}
+        {location.pathname !== "/" && <MobileMenu />}
         <Sidebar />
 
         <Outlet />

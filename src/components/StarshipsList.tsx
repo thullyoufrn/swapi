@@ -6,7 +6,7 @@ interface StarshipsListProps {
 
 export function StarshipsList({ starshipsData }: StarshipsListProps) {
   return (
-    <main className="grid grid-cols-3 gap-5 mt-11">
+    <main className="grid gap-5 mt-11 sm:grid-cols-2 xl:grid-cols-3">
       {starshipsData.map((starship) => (
         <ListItem
           key={starship.name}

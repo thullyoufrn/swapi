@@ -3,9 +3,9 @@ import { StarFour } from "phosphor-react";
 
 export function Home() {
   return (
-    <main className="flex items-center justify-center flex-1 max-h-full gap-16 py-12 pl-24 pr-20">
+    <main className="flex flex-col items-center justify-center flex-1 min-h-[calc(100vh-2rem)] gap-[6rem] lg:flex-row">
       <img
-        className="max-h-full rounded-3xl"
+        className="max-h-[90%] rounded-3xl max-lg:hidden"
         src="https://i.pinimg.com/564x/07/63/a2/0763a214371187810188dce963dbd678.jpg"
         alt="star wars wallpaper"
       />

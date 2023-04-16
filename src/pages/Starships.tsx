@@ -4,7 +4,7 @@ import { Header } from "../components/Header";
 
 export function Starships() {
   return (
-    <section className="flex flex-col flex-grow py-12 pl-24 pr-20">
+    <section className="flex flex-col flex-grow py-4 px-4 lg:py-12 lg:pl-24 lg:pr-20">
       <Header
         title="Starships"
         icon={

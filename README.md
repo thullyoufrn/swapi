@@ -3,7 +3,7 @@
 ## Overview
 
 ### App
-Check it out now and test the app: [Swapi](https://swapi-omega.vercel.app/people).
+Check it out now and test the app: [Swapi](https://swapi-omega.vercel.app).
 
 ### Screenshot
 

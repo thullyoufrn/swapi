@@ -11,8 +11,6 @@ export function MobileMenu() {
       : SetMenuStatus("hidden")
   }
 
-  console.log(menuStatus)
-
   return (
     <nav className="p-4 lg:hidden">
       <List onClick={handleChangeMenuStatus} size={28} weight="bold" className="cursor-pointer text-figma-gray-100 hover:text-figma-purple-100 transition-all duration-300" />

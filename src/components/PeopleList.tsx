@@ -32,7 +32,7 @@ export function PeopleList() {
     axios
     .get(`https://swapi.dev/api/people/?page=${currentPage}`)
     .then(({ data }) => {
-      setTotalPages(data % 10 === 0 ? data / 10 : Math.floor(82 / 10) + 1)
+      setTotalPages(data % 10 === 0 ? data / 10 : Math.floor(data.count / 10) + 1)
       setPeople(data.results)
       setLoading(false)
     })
@@ -43,39 +43,39 @@ export function PeopleList() {
 
   return (
     <section className="flex flex-col justify-between h-full">
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-5">
         <SearchBar 
           handleSearchBarChange={handleSearchBarChange} 
           searchBarContent={searchBarContent} 
         />
 
-          {loading 
-            ? <Loading />
-            : (
-              <main className="grid gap-5 sm:grid-cols-2 h-full">
-                {people.map((person) => (
-                  person.name.includes(searchBarContent)
-                  && (
-                    <ListItem
-                      key={person.name}
-                      itemTitle={person.name}
-                      itemSubtitle={person.birth_year}
-                      to={`${person.name}`}
-                    />
-                  )
-                ))}
-              </main>
-            )
-          }
+        <Paginator 
+          loading={loading}
+          onPreviousPage={previousPage} 
+          onNextPage={nextPage} 
+          currentPage={currentPage} 
+          lastPage={totalPages}
+        />
+
+        {loading 
+          ? <Loading />
+          : (
+            <main className="grid gap-5 sm:grid-cols-2 h-full">
+              {people.map((person) => (
+                person.name.includes(searchBarContent)
+                && (
+                  <ListItem
+                    key={person.name}
+                    itemTitle={person.name}
+                    itemSubtitle={person.birth_year}
+                    to={`${person.name}`}
+                  />
+                )
+              ))}
+            </main>
+          )
+        }
       </div>
-      
-      <Paginator 
-        loading={loading}
-        onPreviousPage={previousPage} 
-        onNextPage={nextPage} 
-        currentPage={currentPage} 
-        lastPage={totalPages}
-      />
     </section>
   )
 }

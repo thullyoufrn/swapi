@@ -4,7 +4,7 @@ import { SearchBar } from "./SearchBar"
 import axios from "axios"
 import Paginator from "./Paginator"
 import Loading from "./Loading"
-import { useAppContext } from "../AppContext"
+import { useAppContext } from "../contexts/AppContext"
 
 export function PeopleList() {
   const [searchBarContent, setSearchBarContent] = useState("")

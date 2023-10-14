@@ -7,13 +7,9 @@ export function Return() {
 
   locationSplited.pop();
 
-  console.log(locationSplited);
-
   const anteriorLocation = locationSplited?.reduce((acc, path) => {
     return acc + path;
   }, "/");
-
-  console.log(anteriorLocation);
 
   return (
     <NavLink

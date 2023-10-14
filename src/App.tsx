@@ -1,4 +1,4 @@
-import { AppProvider } from "./AppContext";
+import { AppProvider } from "./contexts/AppContext";
 import { Router } from "./Router";
 import { BrowserRouter } from "react-router-dom";
 

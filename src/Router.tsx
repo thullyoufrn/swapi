@@ -6,9 +6,8 @@ import { PeopleDetails } from "./pages/PeopleDetails";
 import { People } from "./pages/People";
 import { Starships } from "./pages/Starships";
 import { StarshipsDetails } from "./pages/StarshipsDetails";
-import { useEffect, useState } from "react";
 import { Home } from "./pages/Home";
-import { useAppContext } from "./AppContext";
+import { useAppContext } from "./contexts/AppContext";
 
 export function Router() {
   const { people, starships } = useAppContext()

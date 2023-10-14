@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, ReactNode } from 'react'
-import { PeopleData, StarshipsData } from './@types/swapi'
+import { PeopleData, StarshipsData } from '../@types/swapi'
 
 interface AppContextType {
   people: PeopleData[]

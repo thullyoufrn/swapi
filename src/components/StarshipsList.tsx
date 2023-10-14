@@ -4,7 +4,7 @@ import { SearchBar } from "./SearchBar"
 import axios from "axios"
 import Paginator from "./Paginator"
 import Loading from "./Loading"
-import { useAppContext } from "../AppContext"
+import { useAppContext } from "../contexts/AppContext"
 
 export function StarshipsList() {
   const [searchBarContent, setSearchBarContent] = useState("")
@@ -35,15 +35,11 @@ export function StarshipsList() {
       setTotalPages(data % 10 === 0 ? data / 10 : Math.floor(data.count / 10) + 1)
       setStarships(data.results)
       setLoading(false)
-
-      console.log("TotalPages: ", totalPages)
     })
     .catch((error) => {
       console.log(error)
     })
   }, [currentPage])
-
-  console.log("TotalPages: ", totalPages)
 
   return (
     <section className="flex flex-col justify-between h-full">

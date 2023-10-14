@@ -7,35 +7,11 @@ import { People } from "./pages/People";
 import { Starships } from "./pages/Starships";
 import { StarshipsDetails } from "./pages/StarshipsDetails";
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { PeopleData, StarshipsData } from "./@types/swapi";
 import { Home } from "./pages/Home";
+import { useAppContext } from "./AppContext";
 
 export function Router() {
-  const [peopleData, setPeopleData] = useState<PeopleData[]>([]);
-  const [starshipsData, setStarshipsData] = useState<StarshipsData[]>([]);
-
-  useEffect(() => {
-    axios
-      .get("https://swapi.dev/api/people/")
-      .then(({ data }) => {
-        setPeopleData(data.results);
-        console.log(data.results);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    axios
-      .get("https://swapi.dev/api/starships/")
-      .then(({ data }) => {
-        setStarshipsData(data.results);
-        console.log(data.results);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  const { people, starships } = useAppContext()
 
   return (
     <Routes>
@@ -45,10 +21,10 @@ export function Router() {
         <Route path="/people" element={<People />}>
           <Route
             path="/people"
-            element={<PeopleList peopleData={peopleData} />}
+            element={<PeopleList />}
           />
 
-          {peopleData.map((person) => {
+          {people.map((person) => {
             return (
               <Route
                 key={person.name}
@@ -81,10 +57,10 @@ export function Router() {
         <Route path="/starships" element={<Starships />}>
           <Route
             path="/starships"
-            element={<StarshipsList starshipsData={starshipsData} />}
+            element={<StarshipsList  />}
           />
 
-          {starshipsData.map((starship) => {
+          {starships.map((starship) => {
             return (
               <Route
                 key={starship.name}

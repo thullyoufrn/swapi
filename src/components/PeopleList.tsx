@@ -1,17 +1,18 @@
-import { ChangeEvent, useEffect, useState } from "react";
-import { PeopleData } from "../@types/swapi";
-import { ListItem } from "./ListItem";
-import { SearchBar } from "./SearchBar";
-import axios from "axios";
-import Paginator from "./Paginator";
-import Loading from "./Loading";
+import { ChangeEvent, useEffect, useState } from "react"
+import { ListItem } from "./ListItem"
+import { SearchBar } from "./SearchBar"
+import axios from "axios"
+import Paginator from "./Paginator"
+import Loading from "./Loading"
+import { useAppContext } from "../AppContext"
 
 export function PeopleList() {
   const [searchBarContent, setSearchBarContent] = useState("")
-  const [people, setPeople] = useState<PeopleData[]>([])
   const [currentPage, setCurrentPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
   const [loading, setLoading] = useState(false)
+
+  const {people, setPeople} = useAppContext()
 
   function handleSearchBarChange(event: ChangeEvent<HTMLTextAreaElement>) {
     setSearchBarContent(event.target.value)
@@ -33,11 +34,7 @@ export function PeopleList() {
     .then(({ data }) => {
       setTotalPages(data % 10 === 0 ? data / 10 : Math.floor(82 / 10) + 1)
       setPeople(data.results)
-      console.log("People: ", data)
-
-      setTimeout(() => {
-        setLoading(false)
-      }, 350)
+      setLoading(false)
     })
     .catch((error) => {
       console.log(error)
@@ -58,12 +55,14 @@ export function PeopleList() {
               <main className="grid gap-5 sm:grid-cols-2 h-full">
                 {people.map((person) => (
                   person.name.includes(searchBarContent)
-                  && <ListItem
-                  key={person.name}
-                  itemTitle={person.name}
-                  itemSubtitle={person.birth_year}
-                  to={`${person.name}`}
-                  />
+                  && (
+                    <ListItem
+                      key={person.name}
+                      itemTitle={person.name}
+                      itemSubtitle={person.birth_year}
+                      to={`${person.name}`}
+                    />
+                  )
                 ))}
               </main>
             )
@@ -78,5 +77,5 @@ export function PeopleList() {
         lastPage={totalPages}
       />
     </section>
-  );
+  )
 }

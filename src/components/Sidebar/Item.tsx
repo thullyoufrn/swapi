@@ -22,7 +22,7 @@ export default function Item({
       <div className="group flex self-start gap-4 p-1 transition-all duration-300">
         <div
           className={`w-1 rounded-full mr-2 transition-all duration-300 ${
-            appPathname === itemPathname || appPathname === itemPathname
+            appPathname.includes(itemPathname)
               ? "bg-gradient-to-b from-figma-green-gradient to-figma-purple-gradient"
               : null
           }`}
@@ -30,12 +30,12 @@ export default function Item({
 
         <div
           className={`flex gap-2 transition-all duration-300 ${
-            appPathname === itemPathname || appPathname === itemPathname
-              ? "text-figma-gray-100"
+            appPathname.includes(itemPathname)
+              ? "text-figma-gray-100 font-semibold"
               : null
           }`}
         >
-          {appPathname.includes(itemPathname) || appPathname === itemPathname
+          {appPathname.includes(itemPathname)
             ? iconSelected
             : iconDiselected}
 

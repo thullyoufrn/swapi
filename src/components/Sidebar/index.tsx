@@ -21,13 +21,6 @@ export function Sidebar() {
 
       <nav className="flex flex-col items-start text-figma-gray-400 gap-7">
         <Item 
-          title="Home" 
-          itemPathname="/" 
-          iconSelected={<House size={24} weight="bold" />} 
-          iconDiselected={<House size={24} weight="regular" />}
-        />
-
-        <Item 
           title="People" 
           itemPathname="/people" 
           iconSelected={<User size={24} weight="bold" />} 
